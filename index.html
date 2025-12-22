@@ -3,36 +3,139 @@
 </h1>
 <a href="about.html">about page</a>
 <a href="contact.html">contact page</a>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>My Website</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Polytechnic College</title>
-    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f8;
+        }
+
+        header {
+            background-color: #1e293b;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #334155;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: white;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .cards {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            width: 250px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background-color: #1e293b;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
 </head>
+
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section id="contact">
-        <h1>Contact Us</h1>
-        <p>For more information, please reach out to us using the details below:</p>
-        <ul>
-            <li>Address: Polytechnic College, Rotegaon, Maharashtra</li>
-            <li>Email: info@polytechniccollege.com</li>
-            <li>Phone: 123-456-7890</li>
-        </ul>
-    </section>
-    <footer>
-        <p>&copy; 2025 Polytechnic College. All Rights Reserved.</p>
-    </footer>
+
+<header>
+    <h1>My Website</h1>
+    <p>Welcome to my homepage</p>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+</nav>
+
+<section class="hero">
+    <h1>Simple & Clean Homepage</h1>
+    <p>This website is created using HTML & CSS</p>
+</section>
+
+<section class="section">
+    <h2>Our Services</h2>
+    <br>
+    <div class="cards">
+        <div class="card">
+            <h3>Web Design</h3>
+            <p>Modern and responsive designs</p>
+        </div>
+        <div class="card">
+            <h3>Development</h3>
+            <p>Fast and secure websites</p>
+        </div>
+        <div class="card">
+            <h3>Support</h3>
+            <p>24/7 technical support</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 My Website | All Rights Reserved</p>
+</footer>
+
 </body>
 </html>
 

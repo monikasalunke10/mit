@@ -4,82 +4,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Attractive Website</title>
+  <title>New Year 2026 Celebration</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .content {
-      display: none;
+    body {
+      font-family: 'Roboto', sans-serif;
     }
 
-    .active {
-      display: block;
+    /* For smooth page transitions */
+    .fade {
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Animation for Countdown */
+    @keyframes countDown {
+      0% {
+        transform: scale(1.2);
+      }
+
+      50% {
+        transform: scale(1.1);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* Countdown Timer Styling */
+    .countdown {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #ff6347;
+      animation: countDown 1s ease-in-out infinite;
+    }
+
+    /* Gradient Background */
+    .gradient-bg {
+      background: linear-gradient(to right, rgba(255, 99, 71, 1), rgba(255, 165, 0, 1));
     }
   </style>
 </head>
 
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100 gradient-bg">
 
   <!-- Navbar -->
-  <nav class="bg-gradient-to-r from-purple-600 to-indigo-800 text-white p-4 shadow-lg fixed w-full top-0 z-10">
+  <nav class="bg-transparent text-white p-6 shadow-md fixed w-full top-0 z-50 fade">
     <div class="container mx-auto flex justify-between items-center">
-      <a href="index.html" class="text-xl font-bold">MyWebsite</a>
-      <div>
-        <button onclick="showPage('home')" class="px-6 py-2 hover:bg-purple-700 rounded-md">Home</button>
-        <button onclick="showPage('about')" class="px-6 py-2 hover:bg-purple-700 rounded-md">About</button>
-        <button onclick="showPage('contact')" class="px-6 py-2 hover:bg-purple-700 rounded-md">Contact</button>
+      <a href="index.html" class="text-2xl font-bold font-serif hover:text-yellow-300 transition-all">New Year 2026</a>
+      <div class="flex space-x-6">
+        <button onclick="showPage('home')" class="px-6 py-2 hover:text-yellow-300 transition-all">Home</button>
+        <button onclick="showPage('about')" class="px-6 py-2 hover:text-yellow-300 transition-all">About</button>
+        <button onclick="showPage('contact')" class="px-6 py-2 hover:text-yellow-300 transition-all">Contact</button>
       </div>
     </div>
   </nav>
 
   <!-- Main Content -->
-  <div class="container mx-auto mt-20 p-8">
-
+  <div class="container mx-auto mt-24 p-8">
     <!-- Home Page Content -->
-    <div id="home" class="content active">
-      <section class="text-center py-20">
-        <h2 class="text-4xl font-bold text-purple-700 mb-6">Welcome to My Beautiful Website</h2>
-        <p class="text-lg text-gray-700 mb-6">We offer amazing services to help you achieve your goals. Explore and enjoy!</p>
-        <button class="bg-purple-600 text-white py-2 px-6 rounded-full hover:bg-purple-800 transition ease-in-out">Get Started</button>
-      </section>
+    <div id="home" class="content fade text-center py-20">
+      <h1 class="text-5xl font-serif font-bold text-white mb-8 drop-shadow-lg">Welcome to New Year 2026 Celebration!</h1>
+      <p class="text-xl text-white mb-6">Let's celebrate the start of a beautiful new journey together. ✨</p>
+
+      <!-- Countdown Timer -->
+      <div id="countdown" class="countdown mb-6"></div>
+
+      <p class="text-xl text-white mb-6">Cheers to a year filled with happiness, success, and health!</p>
+      <a href="#" class="bg-yellow-500 text-white py-3 px-8 rounded-full text-xl hover:bg-yellow-600 transition-all">Join the Party</a>
     </div>
 
     <!-- About Page Content -->
-    <div id="about" class="content">
-      <section class="text-center py-20">
-        <h2 class="text-4xl font-bold text-purple-700 mb-6">About Us</h2>
-        <p class="text-lg text-gray-700 mb-6">We are a passionate team working to deliver high-quality services. Our aim is to ensure customer satisfaction and excellence in every project we undertake.</p>
-        <img src="https://via.placeholder.com/400" alt="About Us Image" class="mx-auto rounded-lg shadow-lg">
-      </section>
+    <div id="about" class="content text-center py-20 fade">
+      <h2 class="text-4xl font-bold text-white mb-6">About Us</h2>
+      <p class="text-xl text-white mb-6">We bring people together to celebrate life's milestones. 2026 is a year of new opportunities and new beginnings. Let's start it with joy and laughter!</p>
+      <img src="https://via.placeholder.com/600x400" alt="About Us Image" class="mx-auto rounded-lg shadow-lg">
     </div>
 
     <!-- Contact Page Content -->
-    <div id="contact" class="content">
-      <section class="text-center py-20">
-        <h2 class="text-4xl font-bold text-purple-700 mb-6">Contact Us</h2>
-        <p class="text-lg text-gray-700 mb-6">Have any questions? Feel free to reach out to us!</p>
-        <p class="text-lg text-gray-700 mb-6">Email: <a href="mailto:contact@mywebsite.com" class="text-purple-600">contact@mywebsite.com</a></p>
-        <form class="max-w-md mx-auto">
-          <input type="text" placeholder="Your Name" class="w-full px-4 py-2 mb-4 rounded-md border border-gray-300">
-          <input type="email" placeholder="Your Email" class="w-full px-4 py-2 mb-4 rounded-md border border-gray-300">
-          <textarea placeholder="Your Message" class="w-full px-4 py-2 mb-4 rounded-md border border-gray-300" rows="4"></textarea>
-          <button type="submit" class="bg-purple-600 text-white py-2 px-6 rounded-full hover:bg-purple-800 transition ease-in-out">Send Message</button>
-        </form>
-      </section>
+    <div id="contact" class="content text-center py-20 fade">
+      <h2 class="text-4xl font-bold text-white mb-6">Contact Us</h2>
+      <p class="text-xl text-white mb-6">Have any questions or want to join us? Feel free to get in touch!</p>
+      <form class="max-w-md mx-auto">
+        <input type="text" placeholder="Your Name" class="w-full px-4 py-3 mb-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+        <input type="email" placeholder="Your Email" class="w-full px-4 py-3 mb-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+        <textarea placeholder="Your Message" class="w-full px-4 py-3 mb-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-500" rows="4"></textarea>
+        <button type="submit" class="bg-yellow-500 text-white py-3 px-8 rounded-full hover:bg-yellow-600 transition-all">Send Message</button>
+      </form>
     </div>
 
   </div>
 
-  <footer class="bg-purple-600 text-white py-6 mt-20 text-center">
-    <p>&copy; 2026 MyWebsite. All Rights Reserved.</p>
+  <footer class="bg-transparent text-white py-6 text-center">
+    <p>&copy; 2026 New Year Celebration | All Rights Reserved</p>
   </footer>
 
   <script>
-    // Function to show specific page when clicked
+    // Function to show specific page content
     function showPage(pageId) {
       const pages = document.querySelectorAll('.content');
       pages.forEach(page => page.classList.remove('active'));
       document.getElementById(pageId).classList.add('active');
     }
+
+    // Countdown Timer Script
+    function countdown() {
+      const newYear = new Date("January 1, 2026 00:00:00").getTime();
+      const now = new Date().getTime();
+      const timeLeft = newYear - now;
+
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+      if (timeLeft < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "Happy New Year!";
+      }
+    }
+
+    // Update the countdown every second
+    setInterval(countdown, 1000);
   </script>
 
 </body>

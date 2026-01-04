@@ -23,29 +23,67 @@
     }
 
     .hero-text {
-      animation: fadeInUp 1s ease-out;
+      animation: fadeInUp 1.2s ease-out;
     }
 
     /* Button Style */
     .btn {
-      padding: 10px 20px;
+      padding: 12px 24px;
       background-color: #ff66cc;
       border: none;
       color: white;
       font-weight: bold;
-      border-radius: 5px;
+      border-radius: 8px;
       cursor: pointer;
       transition: 0.3s;
+      text-transform: uppercase;
+      font-size: 1.1rem;
     }
 
     .btn:hover {
       background-color: #ff3385;
     }
 
+    /* Countdown Styling */
+    .countdown {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ff6347;
+    }
+
+    /* Header Styling */
     .section-header {
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: bold;
       color: #fff;
+    }
+
+    /* Animation for Button */
+    .cta-btn {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .cta-btn:hover {
+      transform: scale(1.1);
+    }
+
+    /* Fade-in animation for text */
+    .fadeIn {
+      animation: fadeInUp 1.5s ease-out forwards;
+    }
+
+    /* Section background style */
+    .section-bg {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+
+    /* Success Message */
+    #successMessage {
+      display: none;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff6347;
     }
   </style>
 </head>
@@ -65,73 +103,47 @@
   </nav>
 
   <!-- Hero Section -->
-  <section id="home" class="flex items-center justify-center h-screen gradient-bg text-center">
-    <div>
-      <h1 class="hero-text text-5xl font-bold mb-6">Welcome to New Year 2026 Celebration!</h1>
-      <p class="text-xl mb-6">Let's begin this year with joy, new beginnings, and endless possibilities!</p>
-      <a href="#contact" class="btn">Join Us Now</a>
+  <section id="home" class="flex items-center justify-center h-screen gradient-bg text-center relative">
+    <div class="absolute inset-0 bg-black opacity-50"></div> <!-- Dark overlay for contrast -->
+    <div class="container mx-auto text-center relative z-10">
+      <h1 class="hero-text text-5xl font-bold mb-8 text-white fadeIn">Welcome to New Year 2026 Celebration!</h1>
+      <p class="text-xl mb-8 text-white fadeIn">Join us as we celebrate new beginnings, happiness, and success!</p>
+
+      <!-- Countdown Timer -->
+      <div class="countdown mb-6 text-2xl text-white fadeIn">Time Remaining: <span id="countdown"></span></div>
+
+      <!-- Call-to-Action Button -->
+      <a href="#contact" class="btn cta-btn fadeIn">Join Us Now</a>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="py-24 px-6">
+  <section id="about" class="py-24 px-6 bg-gray-800">
     <div class="container mx-auto text-center">
       <h2 class="section-header mb-8">About Us</h2>
-      <p class="text-xl mb-6">We are a group of passionate individuals committed to bringing people together and celebrating new beginnings. Our goal is to make this New Year celebration unforgettable.</p>
+      <p class="text-xl mb-6 text-gray-300">We are dedicated to creating unforgettable New Year's experiences. Join us and let's start this journey together.</p>
       <div class="flex justify-center space-x-8">
-        <div class="w-1/3 bg-gray-800 p-8 rounded-lg shadow-lg">
+        <div class="w-1/3 bg-gray-700 p-8 rounded-lg shadow-lg section-bg">
           <h3 class="text-2xl font-semibold mb-4">Our Mission</h3>
-          <p class="text-gray-400">Our mission is to create a sense of community, joy, and togetherness by hosting a grand New Year's celebration.</p>
+          <p class="text-gray-300">To bring people together, to celebrate life's milestones, and to make the start of 2026 unforgettable.</p>
         </div>
-        <div class="w-1/3 bg-gray-800 p-8 rounded-lg shadow-lg">
+        <div class="w-1/3 bg-gray-700 p-8 rounded-lg shadow-lg section-bg">
           <h3 class="text-2xl font-semibold mb-4">Our Team</h3>
-          <p class="text-gray-400">We are a team of event planners, designers, and creatives who work together to make the New Year celebration a memorable experience for all.</p>
+          <p class="text-gray-300">A team of passionate planners working hard to make this New Year celebration the best one yet.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-24 px-6 bg-gray-800">
+  <section id="contact" class="py-24 px-6 bg-gray-900">
     <div class="container mx-auto text-center">
       <h2 class="section-header mb-8">Contact Us</h2>
-      <p class="text-xl mb-6">Have any questions or want to join the celebration? Feel free to reach out!</p>
-      <form action="#" class="max-w-xl mx-auto">
-        <input type="text" placeholder="Your Name" class="w-full p-4 mb-4 rounded-lg bg-gray-900 border border-gray-700 text-white">
-        <input type="email" placeholder="Your Email" class="w-full p-4 mb-4 rounded-lg bg-gray-900 border border-gray-700 text-white">
-        <textarea placeholder="Your Message" class="w-full p-4 mb-4 rounded-lg bg-gray-900 border border-gray-700 text-white" rows="5"></textarea>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
-      <p class="text-gray-400 mt-6">You can also follow us on social media.</p>
-      <div class="space-x-6 mt-4">
-        <a href="#" class="text-white">Facebook</a>
-        <a href="#" class="text-white">Instagram</a>
-        <a href="#" class="text-white">Twitter</a>
-      </div>
-    </div>
-  </section>
+      <p class="text-xl mb-6 text-gray-300">Have any questions or suggestions? We'd love to hear from you!</p>
 
-  <!-- Footer -->
-  <footer class="py-8 text-center bg-gray-900 text-gray-500">
-    <p>&copy; 2026 New Year Celebration. All Rights Reserved.</p>
-  </footer>
-
-  <!-- Smooth Scroll and Animation JS -->
-  <script>
-    // Smooth Scroll and Page Transition
-    const links = document.querySelectorAll('a');
-    links.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const target = document.querySelector(link.getAttribute('href'));
-        window.scrollTo({
-          top: target.offsetTop - 60,
-          behavior: 'smooth'
-        });
-      });
-    });
-  </script>
-
-</body>
-</html>
+      <!-- Contact Form -->
+      <form id="contactForm" class="max-w-xl mx-auto" onsubmit="submitForm(event)">
+        <input type="text" id="name" placeholder="Your Name" class="w-full p-4 mb-4 rounded-lg bg-gray-800 border border-gray-700 text-white" required>
+        <input type="email" id="email" placeholder="Your Email" class="w-full p-4 mb-4 rounded-lg bg-gray-800 border border-gray-700 text-white" required>
+        <textarea id="message" placeholder="Your Message" class="w-full p-4 mb-4 rounded
 

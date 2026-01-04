@@ -1,742 +1,88 @@
-<h1>
-	index file
-</h1>
-<<COMMENT
-
-<!DOCTYPE html>
-<html lang="mr">
-<head>
-<meta charset="UTF-8">
-<title>MIT Polytechnic Rotegaon</title>
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
-body{
-    scroll-behavior:smooth;
-    background:#f4f6f8;
-}
-
-/* Navbar */
-nav{
-    background:#003366;
-    padding:15px;
-    position:fixed;
-    width:100%;
-    top:0;
-    z-index:1000;
-}
-nav ul{
-    display:flex;
-    justify-content:center;
-    list-style:none;
-}
-nav ul li{
-    margin:0 20px;
-}
-nav ul li a{
-    color:white;
-    text-decoration:none;
-    font-size:18px;
-    font-weight:bold;
-}
-nav ul li a:hover{
-    color:#ffcc00;
-}
-
-/* Slider */
-.slider{
-    margin-top:70px;
-    height:90vh;
-}
-.slider img{
-    width:100%;
-    height:90vh;
-    object-fit:cover;
-}
-
-/* Sections */
-section{
-    padding:60px 10%;
-}
-h2{
-    text-align:center;
-    color:#003366;
-    margin-bottom:30px;
-    font-size:36px;
-}
-
-/* About */
-.about p{
-    font-size:18px;
-    text-align:center;
-    line-height:1.8;
-}
-
-/* Contact */
-.contact{
-    background:#003366;
-    color:white;
-}
-.contact form{
-    max-width:400px;
-    margin:auto;
-}
-.contact input, .contact textarea{
-    width:100%;
-    padding:10px;
-    margin:10px 0;
-    border:none;
-    border-radius:5px;
-}
-.contact button{
-    width:100%;
-    padding:10px;
-    background:#ffcc00;
-    border:none;
-    font-size:18px;
-    cursor:pointer;
-}
-.contact button:hover{
-    background:white;
-}
-
-/* Footer */
-footer{
-    background:#001a33;
-    color:white;
-    text-align:center;
-    padding:15px;
-}
-</style>
-</head>
-
-<body>
-
-<nav>
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
-
-<!-- Image Slider -->
-<div class="slider" id="home">
-    <img id="slide" src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1">
-</div>
-
-<section class="about" id="about">
-    <h2>About Us</h2>
-    <p>
-        MIT Polytechnic Rotegaon ही उत्कृष्ट तांत्रिक शिक्षण देणारी संस्था आहे.
-        आधुनिक लॅब्स, अनुभवी शिक्षक आणि उज्वल भविष्यासाठी सर्वोत्तम मार्गदर्शन येथे दिले जाते.
-    </p>
-</section>
-
-<section class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <form onsubmit="return validateForm()">
-        <input type="text" id="name" placeholder="Your Name">
-        <input type="email" id="email" placeholder="Your Email">
-        <textarea id="message" placeholder="Your Message"></textarea>
-        <button type="submit">Send Message</button>
-    </form>
-</section>
-
-<footer>
-    © <span id="year"></span> MIT Polytechnic Rotegaon
-</footer>
-
-<script>
-/* Image Slider */
-let images = [
-    "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
-    "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f",
-    "https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
-];
-let i = 0;
-setInterval(() => {
-    i = (i + 1) % images.length;
-    document.getElementById("slide").src = images[i];
-}, 3000);
-
-/* Form Validation */
-function validateForm(){
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let msg = document.getElementById("message").value;
-
-    if(name === "" || email === "" || msg === ""){
-        alert("सर्व फील्ड भरा");
-        return false;
-    }
-    alert("Message Sent Successfully!");
-    return false;
-}
-
-/* Dynamic Year */
-document.getElementById("year").innerText = new Date().getFullYear();
-</script>
-
-</body>
-<< COMMENT
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	    <!DOCTYPE html>
-<html lang="mr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIT Polytechnic ERP - Student Login</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-
-        body {
-            background: #f0f4f7;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            transition: background 0.3s ease;
-        }
-
-        /* Main Container */
-        .container {
-            background: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            width: 350px;
-            padding: 30px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .container:hover {
-            transform: scale(1.05);
-        }
-
-        h1 {
-            color: #003366;
-            margin-bottom: 20px;
-        }
-
-        .input-field {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-
-        .input-field:focus {
-            border-color: #003366;
-            outline: none;
-        }
-
-        .btn {
-            width: 100%;
-            padding: 12px;
-            background: #003366;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            background: #ffcc00;
-        }
-
-        .forgot-password {
-            color: #003366;
-            font-size: 14px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 10px;
-        }
-
-        .forgot-password:hover {
-            color: #ffcc00;
-        }
-
-        /* Dashboard */
-        .dashboard {
-            display: none;
-            background: #003366;
-            color: white;
-            padding: 40px;
-            text-align: center;
-            border-radius: 10px;
-            width: 70%;
-            margin-top: 20px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            transition: transform 0.5s ease;
-        }
-
-        .dashboard h2 {
-            margin-bottom: 20px;
-        }
-
-        .dashboard button {
-            padding: 10px 20px;
-            background: #ffcc00;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .dashboard button:hover {
-            background: #ff9900;
-        }
-
-        .card {
-            background: #ffffff;
-            padding: 20px;
-            margin: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .card h3 {
-            color: #003366;
-        }
-
-        .notification {
-            background-color: #ffcc00;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 10px 0;
-            font-size: 14px;
-        }
-
-        /* Chart Styles */
-        .chart {
-            height: 200px;
-            width: 100%;
-            border-radius: 8px;
-            background-color: #003366;
-            margin-top: 20px;
-            position: relative;
-        }
-
-        .chart span {
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            font-size: 16px;
-        }
-    </style>
-</head>
-<body>
-
-<div class="container" id="loginForm">
-    <h1>MIT Polytechnic ERP</h1>
-    <input type="text" id="username" class="input-field" placeholder="Username" />
-    <input type="password" id="password" class="input-field" placeholder="Password" />
-    <button class="btn" onclick="login()">Login</button>
-    <a href="#" class="forgot-password">Forgot Password?</a>
-</div>
-
-<div class="dashboard" id="dashboard">
-    <h2>Welcome, <span id="studentName"></span>!</h2>
-
-    <!-- Notification -->
-    <div class="notification">New update: Your grades are now available!</div>
-
-    <!-- Dashboard Content -->
-    <div class="card">
-        <h3>Attendance Overview</h3>
-        <div class="chart" id="attendanceChart">
-            <span>Attendance: 85%</span>
-        </div>
-    </div>
-
-    <div class="card">
-        <h3>Grades Overview</h3>
-        <div class="chart" id="gradesChart">
-            <span>Grade: A</span>
-        </div>
-    </div>
-
-    <button onclick="logout()">Logout</button>
-</div>
-
-<script>
-    // Hardcoded login credentials (for demo)
-    const validUsername = "student";
-    const validPassword = "12345";
-
-    // Login function
-    function login() {
-        let username = document.getElementById("username").value;
-        let password = document.getElementById("password").value;
-
-        if (username === "" || password === "") {
-            alert("Please fill in both fields!");
-            return;
-        }
-
-        if (username === validUsername && password === validPassword) {
-            document.getElementById("loginForm").style.display = "none";
-            document.getElementById("dashboard").style.display = "block";
-            document.getElementById("studentName").innerText = username.charAt(0).toUpperCase() + username.slice(1);
-
-            // Animate Dashboard
-            document.getElementById("dashboard").style.transform = "scale(1)";
-        } else {
-            alert("Invalid username or password!");
-        }
-    }
-
-    // Logout function
-    function logout() {
-        document.getElementById("loginForm").style.display = "block";
-        document.getElementById("dashboard").style.display = "none";
-        document.getElementById("username").value = "";
-        document.getElementById("password").value = "";
-    }
-
-    // Attendance Chart (Dynamic Update)
-    function generateChart(id, data) {
-        const chart = document.getElementById(id);
-        const bar = document.createElement("div");
-        bar.style.height = "100%";
-        bar.style.width = data + "%";
-        bar.style.backgroundColor = "#ffcc00";
-        chart.appendChild(bar);
-    }
-
-    // On Dashboard Load
-    window.onload = function() {
-        generateChart('attendanceChart', 85); // 85% attendance
-        generateChart('gradesChart', 90); // 90% grade (A)
-    };
-</script>
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Website</title>
+  <title>Attractive Website</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      font-family: 'Arial', sans-serif;
+    .content {
+      display: none;
+    }
+
+    .active {
+      display: block;
     }
   </style>
 </head>
-<body class="bg-gray-100">
+
+<body class="bg-gray-100 font-sans">
 
   <!-- Navbar -->
-  <nav class="bg-blue-500 text-white p-4">
+  <nav class="bg-gradient-to-r from-purple-600 to-indigo-800 text-white p-4 shadow-lg fixed w-full top-0 z-10">
     <div class="container mx-auto flex justify-between items-center">
-      <a href="#home" class="text-xl font-bold">MyWebsite</a>
+      <a href="index.html" class="text-xl font-bold">MyWebsite</a>
       <div>
-        <a href="#home" class="px-4">Home</a>
-        <a href="#about" class="px-4">About</a>
-        <a href="#contact" class="px-4">Contact</a>
+        <button onclick="showPage('home')" class="px-6 py-2 hover:bg-purple-700 rounded-md">Home</button>
+        <button onclick="showPage('about')" class="px-6 py-2 hover:bg-purple-700 rounded-md">About</button>
+        <button onclick="showPage('contact')" class="px-6 py-2 hover:bg-purple-700 rounded-md">Contact</button>
       </div>
     </div>
   </nav>
 
-  <!-- Home Section -->
-  <section id="home" class="bg-blue-600 text-white py-16">
-    <div class="container mx-auto text-center">
-      <h1 class="text-4xl font-bold">Welcome to My Website</h1>
-      <p class="mt-4 text-xl">Your one-stop solution for everything!</p>
+  <!-- Main Content -->
+  <div class="container mx-auto mt-20 p-8">
+
+    <!-- Home Page Content -->
+    <div id="home" class="content active">
+      <section class="text-center py-20">
+        <h2 class="text-4xl font-bold text-purple-700 mb-6">Welcome to My Beautiful Website</h2>
+        <p class="text-lg text-gray-700 mb-6">We offer amazing services to help you achieve your goals. Explore and enjoy!</p>
+        <button class="bg-purple-600 text-white py-2 px-6 rounded-full hover:bg-purple-800 transition ease-in-out">Get Started</button>
+      </section>
     </div>
-  </section>
 
-  <!-- About Section -->
-  <section id="about" class="container mx-auto py-16">
-    <h2 class="text-3xl font-semibold text-center">About Us</h2>
-    <p class="mt-4 text-center text-xl">We are passionate about providing the best services to our customers.</p>
-    <div class="mt-8 text-center">
-      <p class="max-w-2xl mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vehicula orci vel ex efficitur, vel egestas libero cursus. Curabitur non magna sit amet nunc cursus tincidunt ut ac nisi. Aliquam erat volutpat.</p>
+    <!-- About Page Content -->
+    <div id="about" class="content">
+      <section class="text-center py-20">
+        <h2 class="text-4xl font-bold text-purple-700 mb-6">About Us</h2>
+        <p class="text-lg text-gray-700 mb-6">We are a passionate team working to deliver high-quality services. Our aim is to ensure customer satisfaction and excellence in every project we undertake.</p>
+        <img src="https://via.placeholder.com/400" alt="About Us Image" class="mx-auto rounded-lg shadow-lg">
+      </section>
     </div>
-  </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="bg-gray-100 py-16">
-    <h2 class="text-3xl font-semibold text-center">Contact Us</h2>
-    <div class="mt-8 max-w-2xl mx-auto">
-      <form action="#" method="POST">
-        <div class="mb-4">
-          <label for="name" class="block text-lg">Your Name</label>
-          <input type="text" id="name" name="name" class="w-full p-2 border border-gray-300 rounded mt-2" required>
-        </div>
-        <div class="mb-4">
-          <label for="email" class="block text-lg">Your Email</label>
-          <input type="email" id="email" name="email" class="w-full p-2 border border-gray-300 rounded mt-2" required>
-        </div>
-        <div class="mb-4">
-          <label for="message" class="block text-lg">Your Message</label>
-          <textarea id="message" name="message" class="w-full p-2 border border-gray-300 rounded mt-2" required></textarea>
-        </div>
-        <button type="submit" class="bg-blue-500 text-white py-2 px-6 rounded hover:bg-blue-600">Submit</button>
-      </form>
+    <!-- Contact Page Content -->
+    <div id="contact" class="content">
+      <section class="text-center py-20">
+        <h2 class="text-4xl font-bold text-purple-700 mb-6">Contact Us</h2>
+        <p class="text-lg text-gray-700 mb-6">Have any questions? Feel free to reach out to us!</p>
+        <p class="text-lg text-gray-700 mb-6">Email: <a href="mailto:contact@mywebsite.com" class="text-purple-600">contact@mywebsite.com</a></p>
+        <form class="max-w-md mx-auto">
+          <input type="text" placeholder="Your Name" class="w-full px-4 py-2 mb-4 rounded-md border border-gray-300">
+          <input type="email" placeholder="Your Email" class="w-full px-4 py-2 mb-4 rounded-md border border-gray-300">
+          <textarea placeholder="Your Message" class="w-full px-4 py-2 mb-4 rounded-md border border-gray-300" rows="4"></textarea>
+          <button type="submit" class="bg-purple-600 text-white py-2 px-6 rounded-full hover:bg-purple-800 transition ease-in-out">Send Message</button>
+        </form>
+      </section>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="bg-blue-500 text-white py-4">
-    <div class="container mx-auto text-center">
-      <p>&copy; 2026 MyWebsite. All rights reserved.</p>
-    </div>
-  </footer>
+  </div>
 
-</body>
-
-
-</html
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My E-Commerce Website</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
-  </style>
-</head>
-<body class="bg-gray-100">
-
-  <!-- Navbar -->
-  <nav class="bg-blue-600 text-white p-4">
-    <div class="container mx-auto flex justify-between items-center">
-      <a href="#" class="text-xl font-bold">MyShop</a>
-      <div>
-        <a href="#" class="px-4">Home</a>
-        <a href="#products" class="px-4">Products</a>
-        <a href="#cart" class="px-4">Cart</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="bg-blue-500 text-white py-16 text-center">
-    <h1 class="text-4xl font-bold">Welcome to MyShop</h1>
-    <p class="mt-4 text-xl">The best products, just a click away.</p>
-  </section>
-
-  <!-- Product Section -->
-  <section id="products" class="container mx-auto py-16">
-    <h2 class="text-3xl font-semibold text-center">Our Products</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8" id="product-list">
-      <!-- Product items will be added here dynamically -->
-    </div>
-  </section>
-
-  <!-- Cart Section -->
-  <section id="cart" class="container mx-auto py-16">
-    <h2 class="text-3xl font-semibold text-center">Your Cart</h2>
-    <div id="cart-items" class="mt-8">
-      <p class="text-center">Your cart is empty.</p>
-    </div>
-    <div class="text-center mt-8">
-      <button id="checkout-btn" class="bg-blue-600 text-white py-2 px-6 rounded">Proceed to Checkout</button>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-blue-600 text-white py-4">
-    <div class="container mx-auto text-center">
-      <p>&copy; 2026 MyShop. All rights reserved.</p>
-    </div>
+  <footer class="bg-purple-600 text-white py-6 mt-20 text-center">
+    <p>&copy; 2026 MyWebsite. All Rights Reserved.</p>
   </footer>
 
   <script>
-    const products = [
-      { id: 1, name: "Laptop", price: 50000, img: "https://via.placeholder.com/200" },
-      { id: 2, name: "Smartphone", price: 20000, img: "https://via.placeholder.com/200" },
-      { id: 3, name: "Headphones", price: 1500, img: "https://via.placeholder.com/200" },
-      { id: 4, name: "Smartwatch", price: 7000, img: "https://via.placeholder.com/200" },
-    ];
-
-    let cart = [];
-
-    // Function to display products
-    const displayProducts = () => {
-      const productList = document.getElementById('product-list');
-      productList.innerHTML = ''; // Clear any previous products
-
-      products.forEach(product => {
-        const productItem = document.createElement('div');
-        productItem.classList.add('bg-white', 'p-4', 'rounded-lg', 'shadow-lg');
-        productItem.innerHTML = `
-          <img src="${product.img}" alt="${product.name}" class="w-full h-48 object-cover rounded-t-lg">
-          <h3 class="text-xl font-semibold mt-4">${product.name}</h3>
-          <p class="text-lg text-gray-700">₹${product.price}</p>
-          <button onclick="addToCart(${product.id})" class="mt-4 bg-blue-600 text-white py-2 px-4 rounded">Add to Cart</button>
-        `;
-        productList.appendChild(productItem);
-      });
-    };
-
-    // Function to add products to the cart
-    const addToCart = (productId) => {
-      const product = products.find(p => p.id === productId);
-      if (product) {
-        cart.push(product);
-        updateCart();
-      }
-    };
-
-    // Function to update the cart
-    const updateCart = () => {
-      const cartItems = document.getElementById('cart-items');
-      if (cart.length === 0) {
-        cartItems.innerHTML = '<p class="text-center">Your cart is empty.</p>';
-      } else {
-        cartItems.innerHTML = '';
-        cart.forEach((item, index) => {
-          const cartItem = document.createElement('div');
-          cartItem.classList.add('flex', 'justify-between', 'py-2', 'border-b', 'border-gray-300');
-          cartItem.innerHTML = `
-            <p>${item.name}</p>
-            <p>₹${item.price}</p>
-            <button onclick="removeFromCart(${index})" class="text-red-500">Remove</button>
-          `;
-          cartItems.appendChild(cartItem);
-        });
-      }
-    };
-
-    // Function to remove products from the cart
-    const removeFromCart = (index) => {
-      cart.splice(index, 1);
-      updateCart();
-    };
-
-    // Function to handle checkout
-    const checkout = () => {
-      if (cart.length === 0) {
-        alert("Your cart is empty. Please add items to your cart before checking out.");
-      } else {
-        alert("Checkout process is not implemented in this demo.");
-      }
-    };
-
-    document.getElementById('checkout-btn').addEventListener('click', checkout);
-
-    // Initialize the page
-    displayProducts();
+    // Function to show specific page when clicked
+    function showPage(pageId) {
+      const pages = document.querySelectorAll('.content');
+      pages.forEach(page => page.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
   </script>
 
 </body>
-</html>
 
+</html>
 

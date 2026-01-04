@@ -4,136 +4,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Website</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Learn Web Development</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJ6H+6A7ZfFh5jqDJ4w0kA97M6tgiQ2y2JRUjFEe5szTpa3t9tn+8z9xsoQm" crossorigin="anonymous">
     <style>
-        /* Gradient background */
-        .gradient-bg {
-            background: linear-gradient(to right, rgba(30, 144, 255, 1), rgba(255, 105, 180, 1));
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
         }
 
-        /* Smooth Scroll */
-        html {
-            scroll-behavior: smooth;
+        header h1 {
+            font-size: 3rem;
+            font-weight: bold;
         }
 
-        /* Animation for Hero Text */
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        section h2 {
+            font-size: 2rem;
+            font-weight: 600;
         }
 
-        .hero-text {
-            animation: fadeInUp 1.2s ease-out;
+        footer p {
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            padding: 5px 0;
+        }
+
+        ul li strong {
+            font-weight: 700;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+
+        .tutorial-btn {
+            margin-top: 20px;
         }
     </style>
 </head>
 
-<body class="font-sans bg-gray-900 text-white">
+<body>
 
     <!-- Navbar -->
-    <nav class="gradient-bg fixed top-0 left-0 w-full z-20 p-6 shadow-lg">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="#home" class="text-3xl font-bold text-white">My Business</a>
-            <div class="space-x-6">
-                <a href="#home" class="text-white hover:text-gray-300">Home</a>
-                <a href="#about" class="text-white hover:text-gray-300">About</a>
-                <a href="#services" class="text-white hover:text-gray-300">Services</a>
-                <a href="#contact" class="text-white hover:text-gray-300">Contact</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Learn Web Dev</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#html">HTML</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#css">CSS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#javascript">JavaScript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#bootstrap">Bootstrap</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="flex items-center justify-center h-screen gradient-bg text-center relative">
-        <div class="absolute inset-0 bg-black opacity-50"></div>
-        <div class="container mx-auto text-center relative z-10">
-            <h1 class="hero-text text-5xl font-bold mb-8 text-white fadeIn">Welcome to Our Premium Business</h1>
-            <p class="text-xl mb-8 text-white fadeIn">Join us to celebrate New Year with style and success!</p>
-            <a href="#services" class="bg-pink-600 hover:bg-pink-500 text-white py-2 px-6 rounded-md">Explore Our Services</a>
-        </div>
+    <!-- Header Section -->
+    <header class="text-center bg-primary text-white py-5">
+        <h1>Welcome to Web Development Tutorials</h1>
+        <p>Your one-stop guide to learning HTML, CSS, JavaScript, and Bootstrap</p>
+    </header>
+
+    <!-- HTML Section -->
+    <section id="html" class="container py-5">
+        <h2>HTML Tutorial</h2>
+        <p>HTML is the standard language used to create web pages. Here is a brief tutorial to get you started:</p>
+        <ul>
+            <li><strong>Introduction to HTML</strong></li>
+            <li><strong>HTML Elements</strong></li>
+            <li><strong>HTML Attributes</strong></li>
+            <li><strong>HTML Headings</strong></li>
+            <li><strong>HTML Paragraphs</strong></li>
+            <li><strong>HTML Forms</strong></li>
+        </ul>
+        <button class="btn btn-primary tutorial-btn">Start HTML Tutorial</button>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-24 px-6 bg-gray-800">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold text-white mb-8">About Us</h2>
-            <p class="text-xl text-gray-300 mb-6">We are a team of passionate professionals working together to make your dreams come true.</p>
-            <div class="flex justify-center space-x-8">
-                <div class="w-1/3 bg-gray-700 p-8 rounded-lg shadow-lg hover:shadow-xl transform transition duration-300">
-                    <h3 class="text-2xl font-semibold mb-4 text-white">Our Mission</h3>
-                    <p class="text-gray-300">Our mission is to provide innovative solutions that help businesses grow and succeed.</p>
-                </div>
-                <div class="w-1/3 bg-gray-700 p-8 rounded-lg shadow-lg hover:shadow-xl transform transition duration-300">
-                    <h3 class="text-2xl font-semibold mb-4 text-white">Our Team</h3>
-                    <p class="text-gray-300">A diverse team of experts committed to achieving excellence in every project we undertake.</p>
-                </div>
-            </div>
-        </div>
+    <!-- CSS Section -->
+    <section id="css" class="container py-5 bg-light">
+        <h2>CSS Tutorial</h2>
+        <p>CSS is used to style HTML elements. Learn how to use CSS to create beautiful web pages:</p>
+        <ul>
+            <li><strong>Introduction to CSS</strong></li>
+            <li><strong>CSS Syntax</strong></li>
+            <li><strong>CSS Selectors</strong></li>
+            <li><strong>CSS Properties</strong></li>
+            <li><strong>CSS Layouts</strong></li>
+        </ul>
+        <button class="btn btn-primary tutorial-btn">Start CSS Tutorial</button>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-24 px-6 bg-gray-900">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold text-white mb-8">Our Services</h2>
-            <div class="flex justify-center space-x-8">
-                <div class="w-1/3 bg-gray-700 p-8 rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
-                    <h3 class="text-2xl font-semibold mb-4 text-white">Web Development</h3>
-                    <p class="text-gray-300">Building responsive websites that work seamlessly across all devices.</p>
-                </div>
-                <div class="w-1/3 bg-gray-700 p-8 rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
-                    <h3 class="text-2xl font-semibold mb-4 text-white">Marketing</h3>
-                    <p class="text-gray-300">Helping businesses grow by connecting with the right audience through effective marketing strategies.</p>
-                </div>
-                <div class="w-1/3 bg-gray-700 p-8 rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
-                    <h3 class="text-2xl font-semibold mb-4 text-white">Consulting</h3>
-                    <p class="text-gray-300">Providing expert advice to optimize business processes and enhance performance.</p>
-                </div>
-            </div>
-        </div>
+    <!-- JavaScript Section -->
+    <section id="javascript" class="container py-5">
+        <h2>JavaScript Tutorial</h2>
+        <p>JavaScript is used to make web pages interactive. Learn how to add functionality to your website:</p>
+        <ul>
+            <li><strong>Introduction to JavaScript</strong></li>
+            <li><strong>JavaScript Functions</strong></li>
+            <li><strong>JavaScript Loops</strong></li>
+            <li><strong>JavaScript Events</strong></li>
+            <li><strong>JavaScript DOM</strong></li>
+        </ul>
+        <button class="btn btn-primary tutorial-btn">Start JavaScript Tutorial</button>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 px-6 bg-gray-800">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold text-white mb-8">Contact Us</h2>
-            <p class="text-xl text-gray-300 mb-6">Feel free to reach out to us with your queries and feedback.</p>
-            <form id="contactForm" class="max-w-xl mx-auto" onsubmit="submitForm(event)">
-                <input type="text" id="name" placeholder="Your Name" class="w-full p-4 mb-4 rounded-lg bg-gray-700 text-white" required>
-                <input type="email" id="email" placeholder="Your Email" class="w-full p-4 mb-4 rounded-lg bg-gray-700 text-white" required>
-                <textarea id="message" placeholder="Your Message" class="w-full p-4 mb-4 rounded-lg bg-gray-700 text-white" rows="5" required></textarea>
-                <button type="submit" class="bg-pink-600 hover:bg-pink-500 text-white py-2 px-6 rounded-md">Send Message</button>
-            </form>
-
-            <!-- Success Message -->
-            <div id="successMessage" class="text-xl text-white mt-6 hidden">
-                <p>Your message has been successfully sent! Thank you for reaching out.</p>
-            </div>
-        </div>
+    <!-- Bootstrap Section -->
+    <section id="bootstrap" class="container py-5 bg-light">
+        <h2>Bootstrap Tutorial</h2>
+        <p>Bootstrap is a framework that helps you create responsive web pages. Learn how to use it:</p>
+        <ul>
+            <li><strong>Introduction to Bootstrap</strong></li>
+            <li><strong>Bootstrap Grid</strong></li>
+            <li><strong>Bootstrap Buttons</strong></li>
+            <li><strong>Bootstrap Navbar</strong></li>
+            <li><strong>Bootstrap Cards</strong></li>
+        </ul>
+        <button class="btn btn-primary tutorial-btn">Start Bootstrap Tutorial</button>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-8 text-center bg-gray-900 text-gray-500">
-        <p>&copy; 2026 My Business | All Rights Reserved</p>
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2026 Learn Web Development | All Rights Reserved</p>
     </footer>
 
-    <!-- JavaScript for Form Handling -->
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gyb6hASfFxX6f1GzYw7+ijh0pP7oP6RqlRoA9l3H2fP6hYoHbp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0v8FqgEkU1ANwST5oD4Mc4zQDXy5Hg5M6E5MxyT0qu5bB6zD" crossorigin="anonymous"></script>
+
+    <!-- JavaScript to handle button clicks -->
     <script>
-        function submitForm(event) {
-            event.preventDefault();  // Prevent the page from refreshing
-            // Display the success message
-            document.getElementById("successMessage").style.display = "block";
-            // Reset form fields
-            document.getElementById("contactForm").reset();
-        }
+        document.querySelectorAll(".tutorial-btn").forEach((button) => {
+            button.addEventListener("click", () => {
+                alert("Redirecting to the tutorial...");
+            });
+        });
     </script>
+
 </body>
 
 </html>

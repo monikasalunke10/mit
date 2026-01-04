@@ -5,160 +5,155 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn Web Development</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJ6H+6A7ZfFh5jqDJ4w0kA97M6tgiQ2y2JRUjFEe5szTpa3t9tn+8z9xsoQm" crossorigin="anonymous">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
         }
 
-        header h1 {
-            font-size: 3rem;
-            font-weight: bold;
+        .active-tab {
+            border-bottom: 4px solid #f3a847;
         }
 
-        section h2 {
-            font-size: 2rem;
-            font-weight: 600;
+        .section-content {
+            display: none;
         }
 
-        footer p {
-            font-size: 1rem;
-            color: #ccc;
+        .active-section {
+            display: block;
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        ul li {
-            padding: 5px 0;
-        }
-
-        ul li strong {
-            font-weight: 700;
-        }
-
-        button {
-            margin-top: 10px;
-        }
-
-        .tutorial-btn {
-            margin-top: 20px;
+        .tab-btn:hover {
+            background-color: #2c3e50;
         }
     </style>
 </head>
 
-<body>
+<body class="font-sans bg-gray-900 text-white">
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Learn Web Dev</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#html">HTML</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#css">CSS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#javascript">JavaScript</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#bootstrap">Bootstrap</a>
-                    </li>
-                </ul>
+    <nav class="bg-gray-800 p-6 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#home" class="text-3xl font-bold text-white">WebDev</a>
+            <div class="space-x-6 hidden md:flex">
+                <a href="#html" class="text-white hover:text-gray-400">HTML</a>
+                <a href="#css" class="text-white hover:text-gray-400">CSS</a>
+                <a href="#javascript" class="text-white hover:text-gray-400">JavaScript</a>
+                <a href="#bootstrap" class="text-white hover:text-gray-400">Bootstrap</a>
             </div>
         </div>
     </nav>
 
-    <!-- Header Section -->
-    <header class="text-center bg-primary text-white py-5">
-        <h1>Welcome to Web Development Tutorials</h1>
-        <p>Your one-stop guide to learning HTML, CSS, JavaScript, and Bootstrap</p>
-    </header>
+    <!-- Hero Section -->
+    <section id="home" class="flex items-center justify-center h-screen bg-gradient-to-r from-blue-500 to-pink-600 text-center relative">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto text-center relative z-10">
+            <h1 class="text-5xl font-bold mb-8 text-white animate__animated animate__fadeIn">Learn Web Development Today</h1>
+            <p class="text-xl mb-8 text-white animate__animated animate__fadeIn animate__delay-1s">Master HTML, CSS, JavaScript, and Bootstrap</p>
+            <a href="#html" class="bg-yellow-500 hover:bg-yellow-400 text-white py-3 px-8 rounded-full text-xl">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Tabs for Tutorials -->
+    <div class="container mx-auto py-12">
+        <div class="flex justify-center gap-10 mb-8">
+            <!-- Tab Links -->
+            <button id="html-tab" class="tab-btn text-white py-2 px-6 rounded-md hover:bg-gray-700 transition-all duration-300 active-tab">HTML</button>
+            <button id="css-tab" class="tab-btn text-white py-2 px-6 rounded-md hover:bg-gray-700 transition-all duration-300">CSS</button>
+            <button id="javascript-tab" class="tab-btn text-white py-2 px-6 rounded-md hover:bg-gray-700 transition-all duration-300">JavaScript</button>
+            <button id="bootstrap-tab" class="tab-btn text-white py-2 px-6 rounded-md hover:bg-gray-700 transition-all duration-300">Bootstrap</button>
+        </div>
+    </div>
 
     <!-- HTML Section -->
-    <section id="html" class="container py-5">
-        <h2>HTML Tutorial</h2>
-        <p>HTML is the standard language used to create web pages. Here is a brief tutorial to get you started:</p>
-        <ul>
-            <li><strong>Introduction to HTML</strong></li>
-            <li><strong>HTML Elements</strong></li>
-            <li><strong>HTML Attributes</strong></li>
-            <li><strong>HTML Headings</strong></li>
-            <li><strong>HTML Paragraphs</strong></li>
-            <li><strong>HTML Forms</strong></li>
+    <section id="html-section" class="container py-12 px-6 bg-gray-800 section-content active-section">
+        <h2 class="text-3xl font-semibold text-white mb-6">HTML Tutorial</h2>
+        <p class="text-lg text-gray-300 mb-6">HTML is the basic building block of web development. Below is the syllabus of HTML tutorial:</p>
+        <ul class="text-gray-300 mb-8">
+            <li>Introduction to HTML</li>
+            <li>HTML Elements</li>
+            <li>HTML Attributes</li>
+            <li>HTML Headings and Paragraphs</li>
+            <li>HTML Forms and Inputs</li>
+            <li>HTML Media Elements (Images, Audio, Video)</li>
         </ul>
-        <button class="btn btn-primary tutorial-btn">Start HTML Tutorial</button>
+        <button class="bg-yellow-500 hover:bg-yellow-400 text-white py-2 px-6 rounded-md">Start HTML Tutorial</button>
     </section>
 
     <!-- CSS Section -->
-    <section id="css" class="container py-5 bg-light">
-        <h2>CSS Tutorial</h2>
-        <p>CSS is used to style HTML elements. Learn how to use CSS to create beautiful web pages:</p>
-        <ul>
-            <li><strong>Introduction to CSS</strong></li>
-            <li><strong>CSS Syntax</strong></li>
-            <li><strong>CSS Selectors</strong></li>
-            <li><strong>CSS Properties</strong></li>
-            <li><strong>CSS Layouts</strong></li>
+    <section id="css-section" class="container py-12 px-6 bg-gray-700 section-content">
+        <h2 class="text-3xl font-semibold text-white mb-6">CSS Tutorial</h2>
+        <p class="text-lg text-gray-300 mb-6">CSS (Cascading Style Sheets) is used to style and layout web pages. Below is the syllabus for CSS tutorial:</p>
+        <ul class="text-gray-300 mb-8">
+            <li>Introduction to CSS</li>
+            <li>CSS Syntax and Selectors</li>
+            <li>CSS Layouts: Flexbox, Grid</li>
+            <li>Responsive Web Design with Media Queries</li>
+            <li>CSS Animations</li>
+            <li>Working with Fonts and Colors</li>
         </ul>
-        <button class="btn btn-primary tutorial-btn">Start CSS Tutorial</button>
+        <button class="bg-yellow-500 hover:bg-yellow-400 text-white py-2 px-6 rounded-md">Start CSS Tutorial</button>
     </section>
 
     <!-- JavaScript Section -->
-    <section id="javascript" class="container py-5">
-        <h2>JavaScript Tutorial</h2>
-        <p>JavaScript is used to make web pages interactive. Learn how to add functionality to your website:</p>
-        <ul>
-            <li><strong>Introduction to JavaScript</strong></li>
-            <li><strong>JavaScript Functions</strong></li>
-            <li><strong>JavaScript Loops</strong></li>
-            <li><strong>JavaScript Events</strong></li>
-            <li><strong>JavaScript DOM</strong></li>
+    <section id="javascript-section" class="container py-12 px-6 bg-gray-800 section-content">
+        <h2 class="text-3xl font-semibold text-white mb-6">JavaScript Tutorial</h2>
+        <p class="text-lg text-gray-300 mb-6">JavaScript is used to create interactive web pages. Below is the syllabus for JavaScript tutorial:</p>
+        <ul class="text-gray-300 mb-8">
+            <li>Introduction to JavaScript</li>
+            <li>Variables, Data Types, and Operators</li>
+            <li>JavaScript Functions</li>
+            <li>DOM Manipulation</li>
+            <li>Event Handling in JavaScript</li>
+            <li>Asynchronous JavaScript: Callbacks, Promises, Async/Await</li>
         </ul>
-        <button class="btn btn-primary tutorial-btn">Start JavaScript Tutorial</button>
+        <button class="bg-yellow-500 hover:bg-yellow-400 text-white py-2 px-6 rounded-md">Start JavaScript Tutorial</button>
     </section>
 
     <!-- Bootstrap Section -->
-    <section id="bootstrap" class="container py-5 bg-light">
-        <h2>Bootstrap Tutorial</h2>
-        <p>Bootstrap is a framework that helps you create responsive web pages. Learn how to use it:</p>
-        <ul>
-            <li><strong>Introduction to Bootstrap</strong></li>
-            <li><strong>Bootstrap Grid</strong></li>
-            <li><strong>Bootstrap Buttons</strong></li>
-            <li><strong>Bootstrap Navbar</strong></li>
-            <li><strong>Bootstrap Cards</strong></li>
+    <section id="bootstrap-section" class="container py-12 px-6 bg-gray-700 section-content">
+        <h2 class="text-3xl font-semibold text-white mb-6">Bootstrap Tutorial</h2>
+        <p class="text-lg text-gray-300 mb-6">Bootstrap is a front-end framework for building responsive websites. Below is the syllabus for Bootstrap tutorial:</p>
+        <ul class="text-gray-300 mb-8">
+            <li>Introduction to Bootstrap</li>
+            <li>Bootstrap Grid System</li>
+            <li>Responsive Design with Bootstrap</li>
+            <li>Using Bootstrap Components (Buttons, Forms, Cards, etc.)</li>
+            <li>Customizing Bootstrap with SASS</li>
+            <li>Bootstrap Themes and Templates</li>
         </ul>
-        <button class="btn btn-primary tutorial-btn">Start Bootstrap Tutorial</button>
+        <button class="bg-yellow-500 hover:bg-yellow-400 text-white py-2 px-6 rounded-md">Start Bootstrap Tutorial</button>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2026 Learn Web Development | All Rights Reserved</p>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center py-6">
+        <p>&copy; 2026 WebDev Tutorials | All Rights Reserved</p>
     </footer>
 
-    <!-- Bootstrap JS and Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gyb6hASfFxX6f1GzYw7+ijh0pP7oP6RqlRoA9l3H2fP6hYoHbp" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0v8FqgEkU1ANwST5oD4Mc4zQDXy5Hg5M6E5MxyT0qu5bB6zD" crossorigin="anonymous"></script>
-
-    <!-- JavaScript to handle button clicks -->
+    <!-- JavaScript -->
     <script>
-        document.querySelectorAll(".tutorial-btn").forEach((button) => {
-            button.addEventListener("click", () => {
-                alert("Redirecting to the tutorial...");
+        // Tab Switch Functionality
+        const tabs = document.querySelectorAll('.tab-btn');
+        const sections = document.querySelectorAll('.section-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                // Remove active class from all tabs and sections
+                tabs.forEach(t => t.classList.remove('active-tab'));
+                sections.forEach(section => section.classList.remove('active-section'));
+
+                // Add active class to clicked tab and respective section
+                e.target.classList.add('active-tab');
+                const sectionId = e.target.id.split('-')[0] + '-section'; // Get section ID
+                document.getElementById(sectionId).classList.add('active-section');
             });
         });
+
+        // Default active tab and section (HTML)
+        document.getElementById('html-tab').classList.add('active-tab');
+        document.getElementById('html-section').classList.add('active-section');
     </script>
 
 </body>

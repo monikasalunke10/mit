@@ -1,6 +1,8 @@
 <h1>
 	index file
 </h1>
+<<COMMENT
+
 <!DOCTYPE html>
 <html lang="mr">
 <head>
@@ -179,6 +181,273 @@ function validateForm(){
 
 /* Dynamic Year */
 document.getElementById("year").innerText = new Date().getFullYear();
+</script>
+
+</body>
+<< COMMENT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	    <!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIT Polytechnic ERP - Student Login</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #f0f4f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: background 0.3s ease;
+        }
+
+        /* Main Container */
+        .container {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            color: #003366;
+            margin-bottom: 20px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .input-field:focus {
+            border-color: #003366;
+            outline: none;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: #003366;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #ffcc00;
+        }
+
+        .forgot-password {
+            color: #003366;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .forgot-password:hover {
+            color: #ffcc00;
+        }
+
+        /* Dashboard */
+        .dashboard {
+            display: none;
+            background: #003366;
+            color: white;
+            padding: 40px;
+            text-align: center;
+            border-radius: 10px;
+            width: 70%;
+            margin-top: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s ease;
+        }
+
+        .dashboard h2 {
+            margin-bottom: 20px;
+        }
+
+        .dashboard button {
+            padding: 10px 20px;
+            background: #ffcc00;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .dashboard button:hover {
+            background: #ff9900;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            color: #003366;
+        }
+
+        .notification {
+            background-color: #ffcc00;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        /* Chart Styles */
+        .chart {
+            height: 200px;
+            width: 100%;
+            border-radius: 8px;
+            background-color: #003366;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .chart span {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="loginForm">
+    <h1>MIT Polytechnic ERP</h1>
+    <input type="text" id="username" class="input-field" placeholder="Username" />
+    <input type="password" id="password" class="input-field" placeholder="Password" />
+    <button class="btn" onclick="login()">Login</button>
+    <a href="#" class="forgot-password">Forgot Password?</a>
+</div>
+
+<div class="dashboard" id="dashboard">
+    <h2>Welcome, <span id="studentName"></span>!</h2>
+
+    <!-- Notification -->
+    <div class="notification">New update: Your grades are now available!</div>
+
+    <!-- Dashboard Content -->
+    <div class="card">
+        <h3>Attendance Overview</h3>
+        <div class="chart" id="attendanceChart">
+            <span>Attendance: 85%</span>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Grades Overview</h3>
+        <div class="chart" id="gradesChart">
+            <span>Grade: A</span>
+        </div>
+    </div>
+
+    <button onclick="logout()">Logout</button>
+</div>
+
+<script>
+    // Hardcoded login credentials (for demo)
+    const validUsername = "student";
+    const validPassword = "12345";
+
+    // Login function
+    function login() {
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+
+        if (username === "" || password === "") {
+            alert("Please fill in both fields!");
+            return;
+        }
+
+        if (username === validUsername && password === validPassword) {
+            document.getElementById("loginForm").style.display = "none";
+            document.getElementById("dashboard").style.display = "block";
+            document.getElementById("studentName").innerText = username.charAt(0).toUpperCase() + username.slice(1);
+
+            // Animate Dashboard
+            document.getElementById("dashboard").style.transform = "scale(1)";
+        } else {
+            alert("Invalid username or password!");
+        }
+    }
+
+    // Logout function
+    function logout() {
+        document.getElementById("loginForm").style.display = "block";
+        document.getElementById("dashboard").style.display = "none";
+        document.getElementById("username").value = "";
+        document.getElementById("password").value = "";
+    }
+
+    // Attendance Chart (Dynamic Update)
+    function generateChart(id, data) {
+        const chart = document.getElementById(id);
+        const bar = document.createElement("div");
+        bar.style.height = "100%";
+        bar.style.width = data + "%";
+        bar.style.backgroundColor = "#ffcc00";
+        chart.appendChild(bar);
+    }
+
+    // On Dashboard Load
+    window.onload = function() {
+        generateChart('attendanceChart', 85); // 85% attendance
+        generateChart('gradesChart', 90); // 90% grade (A)
+    };
 </script>
 
 </body>

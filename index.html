@@ -14,7 +14,21 @@
         }
 
         .active-tab {
-            border-bottom: 4px solid #f3a847;
+            background-color: #f3a847;
+            color: white;
+            border-radius: 10px;
+            padding: 10px 20px;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn:hover {
+            background-color: #2c3e50;
+            color: white;
         }
 
         .section-content {
@@ -23,10 +37,6 @@
 
         .active-section {
             display: block;
-        }
-
-        .tab-btn:hover {
-            background-color: #2c3e50;
         }
     </style>
 </head>
@@ -37,12 +47,6 @@
     <nav class="bg-gray-800 p-6 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
             <a href="#home" class="text-3xl font-bold text-white">WebDev</a>
-            <div class="space-x-6 hidden md:flex">
-                <a href="#html" class="text-white hover:text-gray-400">HTML</a>
-                <a href="#css" class="text-white hover:text-gray-400">CSS</a>
-                <a href="#javascript" class="text-white hover:text-gray-400">JavaScript</a>
-                <a href="#bootstrap" class="text-white hover:text-gray-400">Bootstrap</a>
-            </div>
         </div>
     </nav>
 
@@ -52,18 +56,18 @@
         <div class="container mx-auto text-center relative z-10">
             <h1 class="text-5xl font-bold mb-8 text-white animate__animated animate__fadeIn">Learn Web Development Today</h1>
             <p class="text-xl mb-8 text-white animate__animated animate__fadeIn animate__delay-1s">Master HTML, CSS, JavaScript, and Bootstrap</p>
-            <a href="#html" class="bg-yellow-500 hover:bg-yellow-400 text-white py-3 px-8 rounded-full text-xl">Get Started</a>
+            <a href="#tutorials" class="bg-yellow-500 hover:bg-yellow-400 text-white py-3 px-8 rounded-full text-xl">Get Started</a>
         </div>
     </section>
 
     <!-- Tabs for Tutorials -->
-    <div class="container mx-auto py-12">
+    <div class="container mx-auto py-12" id="tutorials">
         <div class="flex justify-center gap-10 mb-8">
             <!-- Tab Links -->
-            <button id="html-tab" class="tab-btn text-white py-2 px-6 rounded-md hover:bg-gray-700 transition-all duration-300 active-tab">HTML</button>
-            <button id="css-tab" class="tab-btn text-white py-2 px-6 rounded-md hover:bg-gray-700 transition-all duration-300">CSS</button>
-            <button id="javascript-tab" class="tab-btn text-white py-2 px-6 rounded-md hover:bg-gray-700 transition-all duration-300">JavaScript</button>
-            <button id="bootstrap-tab" class="tab-btn text-white py-2 px-6 rounded-md hover:bg-gray-700 transition-all duration-300">Bootstrap</button>
+            <button id="html-tab" class="tab-btn text-white">HTML</button>
+            <button id="css-tab" class="tab-btn text-white">CSS</button>
+            <button id="javascript-tab" class="tab-btn text-white">JavaScript</button>
+            <button id="bootstrap-tab" class="tab-btn text-white">Bootstrap</button>
         </div>
     </div>
 
